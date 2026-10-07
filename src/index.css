@@ -1,0 +1,150 @@
+@import "tailwindcss";
+
+@theme {
+  --color-primary: oklch(78.9% 0.154 211.53);
+  --color-primary-hover: oklch(72% 0.16 211.53);
+  --color-primary-light: oklch(86% 0.12 211.53);
+  --color-primary-dark: oklch(62% 0.16 211.53);
+  --color-primary-muted: oklch(78.9% 0.154 211.53 / 0.18);
+  --color-blue-400: oklch(84% 0.13 211.53);
+  --color-blue-500: oklch(78.9% 0.154 211.53);
+  --color-blue-600: oklch(74% 0.16 211.53);
+  --color-blue-700: oklch(65% 0.16 211.53);
+}
+
+@layer base {
+  :root {
+    --font-display: 'Syne', sans-serif;
+    --font-heading: 'Orbitron', 'Syne', sans-serif;
+    --font-body: 'Plus Jakarta Sans', sans-serif;
+    --font-mono: 'JetBrains Mono', monospace;
+    --primary: oklch(78.9% 0.154 211.53);
+    --primary-foreground: #090a0f;
+  }
+}
+
+.font-display {
+  font-family: 'Syne', sans-serif;
+}
+
+.font-heading {
+  font-family: 'Orbitron', sans-serif;
+}
+
+.font-body {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+}
+
+.font-mono-code {
+  font-family: 'JetBrains Mono', monospace;
+}
+
+/* Subtle, barely-visible hairlines */
+.cyber-hairline {
+  background: rgba(255, 255, 255, 0.04);
+}
+
+html:not(.dark) .cyber-hairline {
+  background: rgba(0, 0, 0, 0.05);
+}
+
+/* Monochromatic Glass panel - Refined Premium Tech */
+.cyber-glass {
+  background: rgba(13, 16, 23, 0.75);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 4px 24px -2px rgba(0, 0, 0, 0.35);
+}
+
+html:not(.dark) .cyber-glass {
+  background: rgba(255, 255, 255, 0.92);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  box-shadow: 0 4px 20px -2px rgba(0, 0, 0, 0.05);
+}
+
+/* Premium Tech Card with Subtle Physics Micro-Interactions */
+.tech-card {
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1),
+              border-color 0.3s cubic-bezier(0.16, 1, 0.3, 1),
+              box-shadow 0.3s cubic-bezier(0.16, 1, 0.3, 1),
+              background-color 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.tech-card:hover {
+  transform: translateY(-2px);
+  border-color: oklch(78.9% 0.154 211.53 / 0.35);
+  box-shadow: 0 16px 36px -4px rgba(0, 0, 0, 0.5),
+              0 0 24px oklch(78.9% 0.154 211.53 / 0.06);
+}
+
+.tech-card:active {
+  transform: translateY(0px) scale(0.995);
+}
+
+/* Typing cursor for tech loading state */
+@keyframes tech-blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+.tech-cursor {
+  animation: tech-blink 0.85s infinite ease-in-out;
+}
+
+/* Accessible reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+  *, ::before, ::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* Animated and Styled Cyber Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: rgba(9, 10, 15, 0.6);
+}
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.22), rgba(24, 119, 242, 0.45));
+  border-radius: 9999px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  transition: all 0.3s ease;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(180deg, rgba(24, 119, 242, 0.8), oklch(78.9% 0.154 211.53));
+  box-shadow: 0 0 10px rgba(24, 119, 242, 0.8);
+}
+
+/* Force 3D canvas and Spline container to have no background (pure transparent PNG behavior) */
+canvas[data-engine],
+canvas[data-engine="three.js"],
+canvas[data-engine="spline"],
+.spline-watermark,
+canvas {
+  background: transparent !important;
+}
+
+/* Lenis smooth scrolling integration */
+html.lenis, html.lenis body {
+  height: auto;
+}
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+.lenis.lenis-stopped {
+  overflow: hidden;
+}
+
+
+

@@ -1,0 +1,6 @@
+{
+  "name": "Automation Hub",
+  "description": "Next-generation Automation Hub for omnichannel messenger intelligence, autonomous customer conversations, real-time orders, and dynamic reservation workflows.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
